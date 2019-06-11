@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lotto-Anwendung</title>
+    <meta name="Autor" content="Daniel Will" />
+    <meta charset="utf-8" />
+    <style>
+        #wrapper {
+            border: 1px dotted blue;
+            padding: 10px;
+            background-color: rgba(255, 0, 0, 0.2);
+        }
+
+        #header {
+            text-decoration: underline;
+        }
+
+        input {
+            width: 25px;
+            display: inline-block;
+            margin: 5px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 10pt;
+        }
+    </style>
+    <script src="lotto.js"></script>
+    <!-- <script>
+        //
+    </script> -->
+</head>
+
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <h1>Lotto-Anwendung</h1>
+        </header>
+        <fieldset>
+            <legend>
+                Ihre Glückszahlen:
+            </legend>
+
+            <section id="randomNumbers">
+                <article class="showNumbers">
+                    <input id="nmb0" type="text" />
+                    <input id="nmb1" type="text" />
+                    <input id="nmb2" type="text" />
+                    <input id="nmb3" type="text" />
+                    <input id="nmb4" type="text" />
+                    <input id="nmb5" type="text" />
+                </article>
+            </section>
+            <label>
+                <button onclick="randomLotto()">Generiere</button>
+            </label>
+        </fieldset>
+        <hr>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formularelemente</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            font-size: 16px;
+        }
+
+        #wrapper {
+            width: 90%;
+            margin: 2em auto;
+            padding: 2em;
+            box-shadow: 0.4em 0.4em 0.7em rgba(0, 128, 0, 0.4), 0.2em 0.2em 0.5em rgba(0, 128, 0, 0.7);
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        form {
+            padding-top: 1.5em;
+        }
+
+        .text-box {
+            width: 30%;
+            padding: 1.5em;
+            color: green;
+            display: flex;
+            align-items: center;
+        }
+
+        label,
+        input,
+        .text-box {
+            font-size: 1em;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        label,
+        input {
+            width: 12em;
+            padding: 0.1em;
+            /* line-height: 1.4; */
+            /* border: 1px solid inherit; */
+        }
+
+        label {
+            border-bottom: 1px solid green;
+        }
+
+        .inline-block p>* {
+            display: inline-block;
+        }
+
+        .submit-button {
+            width: 5em;
+            height: 2em;
+            border-radius: 0.3em;
+            margin-top: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Formularelemente:
+         search, url, tel, email, number, range, color, date
+         Attribute:
+         min/max, step, placeholder, autocomplete (on/off)
+    -->
+    <div id="wrapper">
+        <header>
+            <h1>Beispielformular</h1>
+            <p>Übersicht über wichtige Formularelemente</p>
+        </header>
+        <div class="form-container">
+            <form class="inline-block" name="Formular1">
+                <!-- <p>
+                    <label for="search">Suche:</label>
+                    <input type="search" id="search">
+                </p> -->
+                <!-- input type search hat noch keine Funktion! Der einzige Zweck ist, ein Input-Feld erstellen
+                     zu können, das so aussieht wie das Standard-Suchfeld der Seite. -->
+                <p>
+                    <label for="firstname">Vorname:</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Max">
+                </p>
+                <p>
+                    <label for="lastname">Nachname:</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Mustermann">
+                </p>
+                <p>
+                    <label for="pw">Passwort:</label>
+                    <input type="password" id="pw" name="password">
+                </p>
+                <p>
+                    <label for="phone">Tel.-Nr.:</label>
+                    <input type="tel" id="phone" name="phone">
+                </p>
+                <p>
+                    <label for="email">E-Mail:</label>
+                    <input type="email" id="email" name="email" placeholder="max@company.com">
+                </p>
+                <p>
+                    <label for="url">Homepage:</label>
+                    <input type="url" id="url" name="website" placeholder="myhomepage.com">
+                </p>
+                <p>
+                    <label for="customer">Kundennr.:</label>
+                    <input type="number" id="customer" name="customerId" placeholder="nur Zahlen">
+                </p>
+                <p>
+                    <label for="birthday">Geburtstag:</label>
+                    <input type="date" id="birthday" name="birthday">
+                </p>
+                <p>
+                    <label for="range">Von... bis:</label>
+                    <input type="range" id="range" name="range" min="1" max="5" value="3" title="3"
+                        onchange="title=value">
+                </p>
+                <p>
+                    <label for="fav-color">Lieblingsfarbe:</label>
+                    <input type="color" id="fav-color" name="fav-color" value="#000000">
+                </p>
+                <input type="submit" class="submit-button">
+
+            </form>
+
+            <div class="text-box">
+                Beachte, dass die Input-Typen date, color und number noch keinen vollständigen Browser-Support genießen!
+            </div>
+
+            <form class="inline-block">
+                <h2>Weitere Formularelemente</h2>
+                <p>Pizzabestellung</p>
+                <p>
+                    <label for="margherita">Margherita</label>
+                    <input type="radio" name="pizza" id="margherita" checked>
+                </p>
+                <p>
+                    <label for="Rusticana">Rusticana</label>
+                    <input type="radio" name="pizza" id="rusticana">
+                </p>
+                <p>
+                    <label for="dellacasa">Della Casa</label>
+                    <input type="radio" name="pizza" id="dellacasa">
+                </p>
+                <br />
+                <fieldset>
+                    <legend>Extras</legend>
+                    <p>
+                        <label for="cheese">Mozzarella</label>
+                        <input type="checkbox" name="extras" id="cheese">
+                    </p>
+                    <p>
+                        <label for="corn">Mais</label>
+                        <input type="checkbox" name="extras" id="corn">
+                    </p>
+                    <p>
+                        <label for="olives">Oliven</label>
+                        <input type="checkbox" name="extras" id="olives">
+                    </p>
+                    <hr />
+                    <p>
+                        <select name="more" id="more-extras">
+                            <!-- mit dem Zusatz multiple können mehrere Optionen ausgewählt werden 
+                                                                    mit size="3" kann bestimmt werden, wieviele Optionen zugleich im Feld
+                                                                    zu sehen sind. -->
+                            <option value="paprika">Paprika</option>
+                            <option value="capers">Kapern</option>
+                            <option value="eggplant">Auberginen</option>
+                            <option value="tomatoes">Getrocknete Tomaten</option>
+                            <option value="pepperoni">Pfefferoni</option>
+                        </select>
+                    </p>
+                </fieldset>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Formularelemente</title>
+    <!-- entweder hier Style, oder im external stylesheet -->
+    <style>
+        .checkboxContainer p>* {
+            display: inline-block;
+        }
+
+        body {
+            background-color: azure;
+            padding-bottom: 50px;
+        }
+
+        form {
+            background-color: #9FB6CD;
+            padding: 0.5em 1.5em 1.5em;
+        }
+
+        h1 {
+            background-color: slategray;
+            padding: 0.5em;
+            margin-bottom: 0;
+        }
+
+        .inputTypes {
+            background-color: #B9D3EE;
+            padding: 1.5em;
+            padding-bottom: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Übersicht über unterschiedliche input-types (Formularelemente)</h1>
+    <form method="post" action="#address" id="registration-form">
+        <h2>Formular:</h2>
+        <label for="first-name">Vorname:</label>
+        <br />
+        <input type="text" id="first-name" name="FirstName" placeholder="Max" />
+        <br />
+        <label for="last-name">Nachname:</label>
+        <br />
+        <input type="text" id="last-name" name="LastName" placeholder="Mustermann" />
+        <br/>
+        <label for="email-address">Email-Adresse:</label>
+        <br />
+        <input type="email" id="email-address" name="EmailAddress" />
+        <br />
+        <label for="password">Passwort:</label>
+        <br />
+        <input type="password" id="password" name="Password" required/>
+        <br />
+        <label for="confirm-password">Passwort bestätigen:</label>
+        <br />
+        <input type="password" id="confirm-password" name="ConfirmPassword" required/>
+        <br />
+        <label for="website">Website/blog:</label>
+        <br />
+        <input type="url" id="website" name="WebsiteUrl" />
+        <br />
+        <br />
+        <button type="submit">Abschicken
+            <img src="ok.png" width="2%" height="auto"/>
+        </button>
+
+        <input type="submit" value="Registrieren" />
+        <!-- ODER (gleiches Ergebnis wie dieser button):
+            <input type="submit" value="Registrieren" /> -->
+
+    </form>
+    <div class="inputTypes">
+        <h4>Input-Type: "number"</h4>
+        <label for="age">Alter:</label>
+        <br />
+        <input type="number" id="age" min="1" max="120" title="Geben Sie ein Alter zwischen 1 und 120 Jahren an.">
+        <br />
+        <br />
+        <h4>Input-Type: "range"</h4>
+        <input type="range" name="rating" min="1" max="10" value="2" onchange="this.title = value;">
+        <br />
+        <br />
+        <h4>Input-Type: "color"</h4>
+        <input type="color">
+        <br>
+        <br>
+        <h4>Input-Type: "radio"</h4>
+        <label for="male">Männlich</label>
+        <input type="radio" id="male" name="gender" checked />
+        <br/>
+        <label for="female">Weiblich</label>
+        <input type="radio" id="female" name="gender" />
+        <br/>
+        <br>
+        <h4>Input-Type: "checkbox"</h4>
+        <p>Pizzabestellung:</p>
+        <p class="checkboxContainer">
+            <label for="corn">Mais</label>
+            <input type="checkbox" id="corn">
+        </p>
+        <p class="checkboxContainer">
+            <label for="cheese">Extra Käse</label>
+            <input type="checkbox" id="cheese">
+        </p>
+        <p class="checkboxContainer">
+            <label for="egg">Spiegelei</label>
+            <input type="checkbox" id="egg">
+        </p>
+        <p class="checkboxContainer">
+            <label for="meat">Bolognese</label>
+            <input type="checkbox" id="meat">
+        </p>
+        <p class="checkboxContainer">
+            <label for="chilis">Chilis</label>
+            <input type="checkbox" id="chilis">
+        </p>
+
+        <br>
+        <h4>Auch ein Eingabefeld: textarea</h4>
+        <textarea title="geben Sie hier Ihren Text ein" placeholder="Dieses Eingabefeld kann per Default vergrößert werden."></textarea>
+
+    </div>
+
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>on()</title>
+    <script src="src/jquery-3.3.1.min.js"></script>
+
+    <style>
+        #demo {
+            width: 300px;
+            height: 300px;
+            border: 2px solid darkgreen;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            box-sizing: border-box;
+            padding: 1.5em;
+        }
+
+        #wrapper {
+            display: inline-flex;
+        }
+        #maus {
+            margin-left: 100px;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery: on()</h1>
+    <p>Mittels on() können einem Element mehrere Methoden für verschiedene Events zugewiesen werden.</p>
+    <p>Hier: <em>mouseenter</em>, <em>mouseleave</em> und <em>click</em>.</p>
+    <br>
+    <div id="wrapper">
+        <div id="demo">Bewege den Mauszeiger über dieses Feld bzw. klicke darauf</div>
+        <!-- DW -->
+        <div id="maus">
+            <figure>
+                <img src="src/maus.gif" id="mausObj">
+                <figcaption>Klick die Maus!</figcaption>
+            </figure>
+        </div>
+    </div>
+
+
+    <script>
+        $("#demo").on({
+            click: function () {
+                $(this).css("background-color", "gold");
+            },
+            mouseenter: function () {
+                $(this).css("background-color", "limegreen");
+            },
+            mouseleave: function () {
+                $(this).css("background-color", "white");
+                // DW
+                $(this).text("Bewege den Mauszeiger über dieses Feld bzw. klicke darauf")
+            }, // added DanielWi(16.4.2019)            
+            mousedown: function () {
+                $(this).css("background-color", "red");
+                // DW
+                $(this).text("Du drückst die Maus!");
+            },
+            mouseup: function () {
+                $(this).text("Du hast die Maus losgelassen! Fang sie ein! ");
+                $("#maus").css("visibility","visible");
+            }
+        });
+        $("#maus").on({
+           click: function() {
+               $(this).css("visibility","hidden");
+           } 
+        });
+    </script>
+</body>
+
+</html>

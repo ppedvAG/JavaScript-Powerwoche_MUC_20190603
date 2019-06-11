@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Formularelemente</title>
+    <style>
+        form{
+            margin: 3em;
+            background-color: lightblue;
+            width: 40%;
+            padding: 2em;
+        }
+        label,input:not(.ok){
+            font-family: Verdana, sans-serif;
+            font-size: 1em;
+            border: 2px solid lightgray;
+            width: 130px;
+            padding: 0.1em;
+        }
+        label{
+            display: inline-block;
+            border: inherit;
+        }
+
+        .ok{
+            width: 5em;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <form>
+
+        <p><label for="name">Name:</label><input type="text" id="name" placeholder="Mustermann"></p>
+        <p><label for="email">E-Mail:</label><input type="email" id="email"></p>
+        <p><label for="web">Homepage:</label><input type="url" id="web" title="Muss http:// enthalten."></p>
+        <p><label for="age">Alter:</label><input type="number" id="age" min="1" max="120"></p>
+        <p><label for="favcol">Lieblingsfarbe:</label><input type="color" id="favcol"></p>
+        <p><label for="pw">Passwort:</label><input type="password" id="pw"></p>
+        <p><label for="x">Schätzung:</label><input type="range" id="x" min="0" max="20" step="2" title="10" onchange="this.title=value;"></p>
+        <textarea name="text" id="" cols="30" rows="10" placeholder="Bitte geben Sie hier Ihren Text ein..." 
+                    style="resize: horizontal"></textarea>
+        <br/>
+        <br/>
+        <input type="submit" value="OK" class="ok">
+    </form>
+    
+</body>
+</html>

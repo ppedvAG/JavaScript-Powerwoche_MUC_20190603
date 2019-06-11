@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pizzabestellung</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            background-color: floralwhite;
+            background-image: url(images/pizza.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        #wrapper { 
+            background: linear-gradient(to right, rgba(0, 100, 0, 0.8), rgba(245, 245, 245, 0.8) 40%, rgba(245, 245, 245, 0.8) 60%, rgba(178, 34, 34, 0.8));
+            box-shadow: 0 0 8px black;
+            color: rgb(41, 41, 41);
+            width: 80%;
+            margin: 0 auto;
+            min-height: 100vh;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        fieldset {
+            margin-bottom: 1em;
+            color: floralwhite;
+            width: 46%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        legend {
+            font-weight: bold;
+            color: rgb(41, 41, 41);
+        }
+
+        #deliverTo label {
+            display: block;
+            margin-top: 0.1em;
+            font-size: 0.8em;
+        }
+
+        .bg-transparent {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 0.3rem;
+        }
+        #inline-block {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <form>
+            <fieldset>
+                <legend>Pizze</legend>
+                <div class="bg-transparent">
+                    <p>
+                        <label for="">
+                            <input name="pizze" type="radio" checked> Margherita</label>
+                    </p>
+                    <p>
+                        <label for="">
+                            <input name="pizze" type="radio"> Funghi</label>
+                    </p>
+                    <p>
+                        <label for="">
+                            <input name="pizze" type="radio"> Tonno</label>
+                    </p>
+                    <p>
+                        <label for="">
+                            <input name="pizze" type="radio"> Salami</label>
+                    </p>
+                    <p>
+                        <label for="">
+                            <input name="pizze" type="radio"> Della Casa</label>
+                    </p>
+                </div>
+            </fieldset>
+            <fieldset id="extras">
+                <legend>Extras</legend>
+                <div class="bg-transparent">
+                    <p>
+                        <label for="">
+                            <input type="checkbox" name="extras"> Mais</label>
+                    </p>
+                    <p>
+                        <label for="">
+                            <input type="checkbox" name="extras"> Paprika</label>
+                    </p>
+                    <p>
+                        <label for="">
+                            <input type="checkbox" name="extras"> Zwiebeln</label>
+                    </p>
+                    <p>
+                        <label for="">
+                            <input type="checkbox" name="extras"> Ei</label>
+                    </p>
+                    <p>
+                        <label for="">
+                            <input type="checkbox" name="extras"> Tomaten</label>
+                    </p>
+                </div>
+            </fieldset>
+
+            <fieldset id="deliverTo">
+                <legend>Lieferadresse</legend>
+                <div class="bg-transparent" id="inline-block">
+                    <p>
+                        <label>Vorname: </label>
+                        <input type="text" placeholder="Max">
+
+                        <label>Nachname: </label>
+                        <input type="text" placeholder="Mustermann">
+
+                        <label>Straße/Hausnr.: </label>
+                        <input type="text" placeholder="Musterstr. 2">
+
+                        <label>PLZ: </label>
+                        <input type="text" placeholder="1010">
+
+                        <label>Ort: </label>
+                        <input type="text" placeholder="Wien">
+
+                        <label>Tel.Nr.: </label>
+                        <input type="text" placeholder="0699/123456789">
+
+                        <label>E-Mail: </label>
+                        <input type="text" placeholder="max@muster.at">
+                    </p>
+                </div>
+            </fieldset>
+
+            <fieldset id="garlic">
+                <legend>Knoblauch</legend>
+
+                <select id="select_garlic">
+                    <option>nein, danke</option>
+                    <option>ja, bitte</option>
+                    <option>ja, bitte extra viel</option>
+                </select>
+            </fieldset>
+            <br>
+            <p>
+                <input type="submit" value="Bestellen">
+            </p>
+        </form>
+    </div>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

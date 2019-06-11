@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>If-Else-Übung</title>
+
+    <style>
+        body {
+            font-family: Tahoma, Verdana, Geneva, Calibri, sans-serif;
+            font-size: 18px;
+            background-color: rgb(169, 169, 169);
+        }
+
+        form {
+            width: 25em;
+            border: 1px solid rgb(255, 250, 240);
+            box-shadow: 1px 1px 1px rgba(169, 169, 169, 0.7), 2px 2px 3px rgba(169, 169, 169, 0.4);
+            border-radius: 5px;
+            margin: 3em;
+            padding: 2em;
+            background-color: rgba(36, 36, 41, 0.8);
+            color: rgb(255, 250, 240);
+        }
+
+        label,
+        input {
+            border-style: none;
+            border-width: 1px;
+            padding: 0px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            font-size: 1em;
+            font-family: Tahoma, Verdana, Geneva, Calibri, sans-serif;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+            border-color: rgb(242, 242, 248);
+            border-bottom: 1px solid darkorange;
+        }
+
+        input:not(.send-button) {
+            border-bottom: 1px dashed rgb(36, 36, 41);
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            color: Darkorange;
+            padding-left: 3px;
+            background-color: rgba(255, 250, 240, 0.8);
+        }
+
+        input:focus {
+            outline-color: darkorange;
+        }
+
+        .send-button {
+            background-color: darkorange;
+            color: rgb(255, 250, 240);
+            padding: 3px;
+            font-family: Tahoma, sans-serif;
+            border-radius: 3px;
+            box-shadow: 0 0 1px rgba(169, 169, 169, 0.7), 1px 1px 2px rgba(169, 169, 169, 0.4);
+            margin-top: 1rem;
+            font-size: 1em;
+            border: 2px inset rgba(128, 128, 128, 0.4);
+        }
+
+        .send-button:hover {
+            box-shadow: 1px 1px 3px 1px rgba(169, 169, 169, 0.6);
+            background-color: rgb(255, 115, 0);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <form onsubmit="myAlert();">
+        <h1>Altersbestätigung</h1>
+        <p>Bitte geben Sie hier Ihr Alter ein:</p>
+        <p>
+            <label for="age">Alter: </label>
+            <input type="text" id="age">
+        </p>
+        <br>
+        <br>
+        <input type="submit" class="send-button">
+    </form>
+</body>
+
+<script>
+    function myAlert() {
+        var age = document.getElementById('age');
+
+        if (age.value <= 0) {
+            alert('Beim Alter muss es sich um eine positive Zahl handeln.');
+        }
+        else if (age.value > 0 && age.value < 18) {
+            alert('Die Anmeldung zum Bungee-Jumpen ist für Jugendliche unter 18 Jahren nicht gestattet.');
+        }
+        else if (age.value >= 70 && age.value < 120) {
+            alert('Die Anmeldung kann erst nach Übermittlung eines ärztlichen Attests erfolgen.');
+        }
+        else if (age.value >= 120) {
+            alert('Im Zweifelsfall überprüfen Sie bitte Ihre Geburtsurkunde.');
+        }
+        else if (age.value == "" || isNaN(age.value)) {
+            alert('Bitte geben Sie Ihr Alter ein.');
+        }
+        else {
+            alert('Danke für Ihre Anmeldung.');
+        }
+    }
+</script>
+
+</html>

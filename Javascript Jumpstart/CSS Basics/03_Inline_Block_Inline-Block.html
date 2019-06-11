@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(Inline-) Block Übersicht</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- von w3s -->
+  <style>
+    label {
+      width: 100px;
+      border: 1px solid crimson;
+    }
+
+    .inline {
+      display: inline;
+    }
+
+    .block {
+      display: block;
+    }
+
+    /* Variante: Styling für das ganze div, nicht für jeden p einzeln */
+    .inline-block p>* {
+      display: inline-block;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>inline</h1>
+  <p>
+    <label class="inline" for="vorname">Vorname:</label>
+    <input type="text" id="vorname">
+  </p>
+  <p>
+    <label class="inline" for="name">Nachname:</label>
+    <input type="text" id="name">
+  </p>
+  <p>
+    <label class="inline" for="ort">Ort:</label>
+    <input type="text" id="ort">
+
+    <!-- auch möglich, wenn nicht bei jedem p eigens eine class dabeistehen soll -->
+    <div class="inline-block">
+      <h1>inline-block</h1>
+      <p>
+        <label for="plz">PLZ:</label>
+        <input type="text" id="plz">
+      </p>
+      <p>
+        <label for="strasse">Straße:</label>
+        <input type="text" id="strasse">
+      </p>
+      <p>
+        <label for="nr">Nr.:</label>
+        <input type="text" id="nr">
+      </p>
+    </div>
+
+    <h1>block</h1>
+    <p>
+      <label class="block" for="tel">Tel.:</label>
+      <input type="text" id="tel">
+    </p>
+    <p>
+      <label class="block" for="email">E-mail:</label>
+      <input type="text" id="email">
+    </p>
+    <p>
+      <label class="block" for="suche">Suche:</label>
+      <input type="text" id="suche">
+    </p>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

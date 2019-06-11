@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 3em;
+            font-family: Georgia, serif;
+            font-size: 16px;
+        }
+
+        #content-box {
+            background-color: #f3f3f3;
+            margin: 2em auto;
+            padding: 2em;
+            width: 90%;
+            box-shadow: 0.4em 0.4em 0.6em rgba(0, 128, 0, 0.4), 0.2em 0.2em 0.4em rgba(0, 128, 0, 0.7);
+        }
+
+        .text-box {
+            border: 1px solid green;
+            padding: 2em;
+            display: flex;
+            align-items: center;
+            margin: 2em 1em 1em 0;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="content-box">
+        <p>Geben Sie eine Zahl ein und klicken Sie auf "ok":</p>
+
+        <input id="test" type="number" min="100" max="300" required>
+        <button onclick="myFunction()">OK</button>
+
+        <p>Wenn die Zahl kleiner als 100 oder größer als 300 ist, wird eine Fehlermeldung angezeigt.</p>
+
+        <p id="demo"></p>
+        <hr>
+
+        <!-- das Gleiche nochmal, nur wird als Fehlermeldung ein alert ausgegeben-->
+    <p>Geben Sie eine Zahl ein und klicken Sie auf "ok":</p>
+    
+    <input id="test2" type="number" min="100" max="300" required>
+    <button onclick="myFunction2()">OK</button>
+    
+    <p>Wenn die Zahl kleiner als 100 oder größer als 300 ist, wird eine Fehlermeldung angezeigt.</p>
+    <hr>
+
+
+
+        <!-- Beispiel mit PATTERN -->
+        <p>Geben Sie eine
+            <strong>positive dreistellige</strong> Zahl ein und klicken Sie auf "ok":</p>
+
+        <input id="test3" type="text" pattern="\d{3}" required>
+        <button onclick="myFunction3()">OK</button>
+
+        <p>Es muss eine dreistellige Zahl eingegeben werden, sonst wird eine Fehlermeldung angezeigt.</p>
+
+        <p id="demo3"></p>
+        <hr>
+
+
+        <!-- Beispiel: darf NICHT enthalten-->
+    <p>Ihre Suche darf keine Anführungszeichen enthalten.</p>
+    Suche: <input id="test5" type="search" pattern="[^'\x22]*" required>
+    <button onclick="myFunction5()">OK</button>
+    <hr>
+
+
+
+        
+
+        <!-- FORTGESCHRITTENE: PASSWORT-->
+    <p>Geben Sie ein Passwort ein und klicken Sie auf "ok".</p>
+    <p>Das Passwort muss aus mindestens 8 Zeichen, Groß- und Kleinbuchstaben und mindestens einer Zahl bestehen.</p>
+
+    <label>Password: <input type="password" id="pw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        title="Das Passwort muss aus mindestens 8 Zeichen, Groß- und Kleinbuchstaben und mindestens einer Zahl bestehen."
+         required>
+    </label>
+    <button onclick="myFunction4()">OK</button>
+
+    <p id="demo4"></p>
+    <hr>
+
+<form>
+        <!-- FORTGESCHRITTENE: E-MAIL-->
+    E-mail: <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="max@muster.com">
+    <input type="submit">
+
+
+        <!-- FORTGESCHRITTENE: URL-->
+    Homepage: <input type="url" name="website" pattern="https?://.+" title="Muss http:// enthalten." placeholder="http://mycompany.com">
+    <input type="submit">
+</form>
+
+
+    </div>
+    <!-- .content-box end -->
+    <script>
+
+
+        function myFunction() {
+            var inpObj = document.getElementById("test");
+
+            /* eine eigene default-Fehlermeldung schreiben:
+                        inpObj.setCustomValidity('Test funktioniert!');
+            */
+
+            //prüfen, ob die Eingabe mit dem geforderten Format übereinstimmt:
+
+            if (inpObj.checkValidity() == false) {
+                document.getElementById("demo").innerHTML = inpObj.validationMessage;
+            } else {
+                document.getElementById("demo").innerHTML = "Gut gemacht.";
+            }
+
+
+        }
+
+        // Variante 2 mit Alert als Fehlermeldung -----------------------------------------------------
+        function myFunction2() {
+            var inpObj = document.getElementById("test2");
+
+            if (inpObj.checkValidity() == false) {
+                alert(inpObj.validationMessage);
+            } else {
+                alert("Gut gemacht.");
+            }
+        }
+
+
+        // Variante 3 mit Pattern (3-stellige Zahl)
+        function myFunction3() {
+            var inpObj = document.getElementById("test3");
+
+            if (inpObj.checkValidity() == false) {
+                document.getElementById("demo3").innerHTML = inpObj.validationMessage;
+            }
+            else {
+                document.getElementById("demo3").innerHTML = "Gut gemacht.";
+            }
+        }
+
+        // Fortgeschrittenenvariante: PASSWORT
+        function myFunction4() {
+            var inpObj = document.getElementById("pw");
+
+            if (inpObj.checkValidity() == false) {
+                document.getElementById("demo4").innerHTML = inpObj.validationMessage;
+            }
+            else {
+                document.getElementById("demo4").innerHTML = "Gut gemacht.";
+            }
+        }
+
+        //Beispiel: darf NICHT enthalten
+        function myFunction5() {
+            var inpObj = document.getElementById("test5");
+            if (inpObj.checkValidity() == false) {
+                alert(inpObj.validationMessage);
+            } else {
+                alert("Gut gemacht.");
+            }
+        }
+
+
+
+        /* andere Möglichkeit, abzufragen, ob valid:
+
+        var feld = document.getElementById('feld1');
+
+        var pruefe = function () {
+            feld.checkValidity();
+        }
+
+        feld.oninvalid = function (evt) {
+            evt.preventDefault();
+            alert("FELD FAAAAALSCH!");
+        }
+
+        */
+
+    </script>
+
+</body>
+
+</html>

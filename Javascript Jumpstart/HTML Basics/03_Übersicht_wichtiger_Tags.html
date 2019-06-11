@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>Wichtige Tags</title>
+    
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          
+    <style>
+        /* Styling wird im CSS-Teil näher erklärt. Das hier verwendete Styling dient der besseren Übersichtlichkeit auf der Seite. */
+
+        h1{
+            background-color: #4E026E;
+        }
+
+        h2{
+            background-color: #64247F;
+        }
+
+        h3{
+            background-color: #7908AA;
+        }
+
+        h4{
+            background-color: #A63CD4;
+        }
+
+        h5{
+            background-color: #B365D4;
+        }
+
+        h6{
+            background-color: #D2A9E4;
+        }
+
+        p{
+            background-color: lightsteelblue;
+        }
+
+        code{
+            font-family: Courier, monospace;
+            /* background-color: darkgray; */
+        }
+
+        div{
+            background-color: powderblue;
+        }
+
+        span{
+            color: ivory;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1><span>Übersicht wichtiger HTML-Tags</span> - dies ist eine h1-Überschrift</h1><!-- span, also eine "Spanne", wird für einen
+                                                                    Abschnitt innerhalb eines Abschnittes verwendet, der ein anderes
+                                                                    Styling erhalten soll. -->
+    <h2>Das ist eine h2-Überschrift</h2>
+    <h3>Das ist eine h3-Überschrift</h3>
+    <h4>Das ist eine h4-Überschrift</h4>
+    <h5>Das ist eine h5-Überschrift</h5>
+    <h6>Wie man sieht, ist h1-die größte und h6 die kleinste Überschrift. (Das ist eine h6-Überschrift.)</h6>
+    <p>Dies ist ein Textabschnitt. Er wird mit "p" für "paragraph" abgekürzt. Unter diesem Paragraphen 
+        befindet sich eine horizontale Linie über die ganze Seite. Auch dafür gibt es ein Tag: <code>&lt;hr/&gt;</code>
+    </p>
+   <hr/>
+   <div>
+       Dieser Text befindet sich innerhalb eines sogenannten Div-Tags. Div steht für "division", also einen Abschnitt.
+       Es ist eines der wichtigsten und am häufigsten verwendeten Tags, das man braucht, um der Seite eine Struktur zu geben.
+       <br/>
+       Darunter haben wir ein Bild eingefügt. Das geschieht mit einem <code>&lt;img&gt;</code>-Tag.
+   </div>
+   <br/> <!-- Das ist ein linebreak (Abstand). -->
+   <img src="../Images/Beispielbild01.jpg" alt="Smileyface mit Brille" /> <!-- Ein Bild wird eingebunden, indem man den Dateipfad 
+                                                                            mit src angibt. "Alt" bedeutet, dass hier der angegebene
+                                                                            Text steht, falls das Bild aus irgendeinem Grund nicht 
+                                                                            angezeigt werden kann. Auch für Screenreader ist
+                                                                            diese Information wichtig. -->
+
+        <!-- Es macht Sinn, für ein img inline width und height anzugeben. Dauert das Laden etwas länger oder kann das Bild
+            nicht geladen werden, wird so der benötigte Platz freigehalten und das Layout der Seite nicht verändert. -->
+
+    <div>
+        <p>Hier sehen wir mehrere Paragraphen innerhalb eines <code>&lt;div&gt;</code>-Tags (meistens kurz schlicht 
+           als "Div" bezeichnet).</p>
+        <p>Mit <code>&lt;strong&gt;</code> stellen wir den Text <strong>fett</strong> dar.</p>
+        <p>Mit <code>&lt;em&gt;</code> stellen wir den Text <em>kursiv</em> dar.</p><br/>
+        <p>Einen <a href="#test">Link</a> kennzeichnen wir mit <code>&lt;a&gt;</code>. Hier sieht man das standardmäßige Styling
+           für einen Link. Möchte man, dass der Link anders dargestellt wird, erreicht man das über CSS. Dieser Link führt
+           nirgendwo hin, sondern dient nur als Beispiel. Möchte man tatsächlich irgendwohin verlinken, gibt man das Ziel 
+           mittels <code>href="Adresse, zu der man verlinken möchte"</code> innerhalb des <code>&lt;a&gt;</code>-Tags an.</p>
+
+    </div>
+
+
+    <script>
+            //hier kommt JavaScript-Code rein
+    </script>
+
+</body>
+
+</html>

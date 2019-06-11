@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>jQuery Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="src/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("p").click(function () {
+                $(this).hide();
+            });
+
+            $("input").blur(function () {
+                $(this).css("background-color", "#ff0000");
+                /* alert('Bitte füllen Sie das Feld aus!'); */
+            });
+            $("input").focus(function() {
+                $(this).css("background-color", "#ffffff");
+            });
+        });
+        function Reverse() {
+            $("p").show();
+        };
+    </script>
+</head>
+
+<body>
+
+    <p>Klick auf die Schrift!</p>
+    <p>Gleich noch mal!</p>
+    <p>Einmal geht noch!</p>
+    <br>
+    <br>
+    <input type="text" placeholder="Bitte Name eingeben">
+    <input type="text">
+    <input type="text"> </br></br> 
+    <button id="reverse" onclick="Reverse()">Wiederherstellen</button>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(Inline-) Block Übersicht</title>
+  <style>
+    body {
+      font-size: 16px;
+    }
+
+    #container{
+      margin: 1.5em 1em;
+      padding: 1em 2em;
+      width: 40%;
+      box-shadow: 0.3em 0.3em 0.7em rgba(0, 128, 0, 0.4), 0.2em 0.2em 0.5em rgba(0, 128, 0, 0.7);
+    }
+
+     label,input{
+      font-family: Verdana, Tahoma, sans-serif;
+      font-size: 1em;
+      padding: 0.1em;
+      border: 1px inset inherit;
+    } 
+
+    label {
+      width: 100px;
+      border-bottom: 2px solid green;
+    }
+
+    .inline {
+      display: inline;
+    }
+
+    .block {
+      display: block;
+    }
+
+    /* Variante: Styling für das ganze div, nicht für jedes p einzeln */
+
+    .inline-block p>* {
+      display: inline-block;
+    }
+
+    /* Gib den Klassen eine Hintergrundfarbe, um zu sehen, wie sich die unterschiedlichen Selektoren auswirken! */
+
+    /* .inline-block{
+      display: inline-block;
+    } */
+  </style>
+
+</head>
+
+<body>
+  <div id="container">
+
+    <h1>inline</h1>
+    <p>
+      <label class="inline" for="vorname">Vorname:</label>
+      <input type="text" id="vorname">
+    </p>
+    <p>
+      <label class="inline" for="name">Nachname:</label>
+      <input type="text" id="name">
+    </p>
+    <p>
+      <label class="inline" for="ort">Ort:</label>
+      <input type="text" id="ort">
+    </p>
+
+    <!-- auch möglich, wenn nicht bei jedem p eigens eine class dabeistehen soll -->
+    <div class="inline-block">
+      <h1>inline-block</h1>
+      <p>
+        <label for="plz">PLZ:</label>
+        <input type="text" id="plz">
+      </p>
+      <p>
+        <label for="strasse">Straße:</label>
+        <input type="text" id="strasse">
+      </p>
+      <p>
+        <label for="nr">Nr.:</label>
+        <input type="text" id="nr">
+      </p>
+    </div>
+
+    <h1>block</h1>
+    <p>
+      <label class="block" for="tel">Tel.:</label>
+      <input type="text" id="tel">
+    </p>
+    <p>
+      <label class="block" for="email">E-mail:</label>
+      <input type="text" id="email">
+    </p>
+    <p>
+      <label class="block" for="suche">Suche:</label>
+      <input type="text" id="suche">
+    </p>
+  </div>
+
+
+</body>
+
+</html>

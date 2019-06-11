@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<link rel="stylesheet" href="themes/testtheme01.min.css" /> -->
+    <link rel="stylesheet" href="src\jquery.mobile-1.4.5\jquery.mobile.theme-1.4.5.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <!-- CDN (Content Delivery Network) -->
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- CDN (Content Delivery Network) 
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>  
+    -->
+    <!-- jQuery-Mobile ist aktuell nicht kompatibel mit jQuery 3.X Versionen ... siehe DevTools -->
+    <!-- <script src="src\jquery-3.4.1.min.js"></script> -->
+    <script src="src\jquery.mobile-1.4.5\jquery.mobile-1.4.5.min.js"></script>
+    <title>Multipage Beispiel</title>
+    <script>
+        $(function () {
+            $("[data-role = 'navbar']").navbar();
+            $("[data-role = 'header'], [data-role = 'footer']").toolbar();
+        });
+
+        // Update the the toolbar's contents
+        $(document).on("pagecontainerchange", function () {
+            // Each of the 4 pages in this example has a data-title attribute
+            // which value is equal to the nav button's text
+            // For e.g., on first page: <div data-role = "page" data-title = "Details">
+            var current = $(".ui-page-active").jqmData("title");
+
+            // Change the heading
+            $("[data-role = 'header'] h1").text(current);
+
+            // Add active class to current nav button
+            $("[data-role = 'navbar'] a").each(function () {
+                if ($(this).text() === current) {
+                    $(this).addClass("ui-btn-active");
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <a href="" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon 
+               ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
+        <h1>Homepage</h1>
+    </div>
+
+    <div data-role="page" data-title="Homepage" class="jqm-demos" id="home">
+        <div role="main" class="ui-content jqm-content jqm-fullwidth">
+            <h1>Homepage</h1>
+            <p>Willkommen auf der Homepage</p>
+
+            <ul class="list">
+                <li>
+                    <p>The jQuery Mobile creates web applications in such a way that it
+                        will work the same way on the mobile, tablet and desktop devices.</p>
+                </li>
+
+                <li>
+                    <p>The jQuery Mobile is compatible with other frameworks such as
+                        <i>PhoneGap</i>, <i>Whitelight</i> etc.</p>
+                </li>
+
+                <li>
+                    <p>The jQuery Mobile provides set of touch friendly form inputs and
+                        UI widgets.</p>
+                </li>
+
+                <li>
+                    <p>The progressive enhancement brings you functionality to all mobile,
+                        tablet and desktop platforms and adds efficient page loads and wider device
+                        support.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="page" data-title="Kontakt" id="contact">
+        <div role="main" class="ui-content jqm-content jqm-fullwidth">
+            <h1>Kontakt</h1>
+            <p>The jQuery Mobile is a user interface framework which is built on
+                jQuery core and used for developing responsive websites or applications that
+                are accessible on mobile, tablet and desktop devices. It uses features of both
+                jQuery and jQueryUI to provide API features for mobile web applications.</p>
+
+            <ul class="list">
+                <li>
+                    <p>The jQuery Mobile creates web applications in such a way that it
+                        will work the same way on the mobile, tablet and desktop devices.</p>
+                </li>
+
+                <li>
+                    <p>The jQuery Mobile is compatible with other frameworks such as
+                        <i>PhoneGap</i>, <i>Whitelight</i> etc.</p>
+                </li>
+
+                <li>
+                    <p>The jQuery Mobile provides set of touch friendly form inputs and
+                        UI widgets.</p>
+                </li>
+
+                <li>
+                    <p>The progressive enhancement brings you functionality to all mobile,
+                        tablet and desktop platforms and adds efficient page loads and wider device
+                        support.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="header" data-position="fixed" data-theme="b">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-prefetch="true" data-transition="flow">Home</a></li>
+
+                <li><a href="#contact" data-prefetch="true" data-transition="flow">Kontakt</a>
+                </li>
+
+                <li><a href="#career" data-prefetch="true" data-transition="flow">Karriere</a>
+                </li>
+
+                <li><a href="/jquery_mobile/src/page_three.html" data-prefetch="true" data-transition="turn">Emails</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

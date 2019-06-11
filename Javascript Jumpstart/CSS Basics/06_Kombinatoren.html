@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Selectors</title>
+    <style>
+        /* Nachfahren Kombinator div p
+           Kind Kombinator div>p
+           Benachbarte-Geschwister-Kombinator h1+p
+           Allgemeiner Geschwister-Kombinator h1~p
+        */
+
+        div p{
+            font-style: italic;
+        }
+
+        div>p{
+            color: firebrick;
+        }
+
+        h1+p{
+            color: cyan;
+        }
+
+        h1~p{
+            color: fuchsia;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Der Zauberlehrling</h1>
+    <p>Walle, walle, manche Strecke</p>
+    <p>daß, zum Zwecke,
+        <span>Wasser</span> fließe</p>
+    <div>
+        <p>und mit reichem, vollem Schwalle</p>
+        <footer>
+            <p>zu dem Bade sich ergieße.</p>
+            <div>Johann Wolfgang von Goethe</div>
+        </footer>
+    </div>
+
+
+</body>
+
+</html>

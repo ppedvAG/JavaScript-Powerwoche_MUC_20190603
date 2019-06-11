@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Semantische Elemente</title>
+
+    <style>
+        body {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        #wrapper {
+            width: 75%;
+            margin: 1em auto 3em;
+            padding: 2em;
+            box-shadow: 0.4em 0.4em 0.7em rgba(0, 128, 0, 0.4), 0.2em 0.2em 0.5em rgba(0, 128, 0, 0.7);
+            font-size: 1em;
+            font-family: Verdana, sans-serif;
+            color: #1f1f1f;
+        }
+
+        aside,
+        footer {
+            font-family: 'Gill Sans', Calibri, sans-serif;
+        }
+
+        aside {
+            color: firebrick;
+        }
+
+        footer {
+            margin-top: 2em;
+            color: green;
+        }
+
+        #wrapper+footer {
+            width: 100%;
+            box-shadow: 0 -0.4em 0.7em rgba(0, 128, 0, 0.4), 0 -0.2em 0.5em rgba(0, 128, 0, 0.7);
+            margin: 0 auto;
+            padding: 2em;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Semantische Elemente</h1>
+            <p>Diese Seite wurde mit semantischen Elementen strukturiert.</p>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Info</a>
+                </li>
+                <li>
+                    <a href="#">Facts</a>
+                </li>
+                <li>
+                    <a href="#">Shop</a>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <h2>In dieser Section befinden sich 3 Artikel</h2>
+            <article>
+                <h3>Dies ist der
+                    <em>erste</em> Artikel in der Section</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, voluptas a, beatae, sunt
+                    necessitatibus eveniet numquam
+                    mollitia error at distinctio deserunt libero ad. At, incidunt veniam sit nemo quia quasi consectetur
+                    delectus minima, laudantium maxime ea suscipit dicta officia pariatur rerum ipsam dolor.
+                </p>
+                <aside>
+                    Dies ist ein <code>aside</code>. Darin befindet sich zusätzliche Information zu diesem Artikel; in
+                    der Praxis
+                    wird ein <code>aside</code> allerdings auch oft für Werbung verwendet. Das Styling und auch die
+                    Platzierung des
+                    <code>aside</code> erfolgt über das Styling (CSS).
+                </aside>
+                <p>
+                    <em>Dieser Paragraph <code>&lt;p&gt;</code> gehört auch noch zum ersten Artikel.</em><br />
+                    Harum cupiditate nesciunt sit fuga eum maxime mollitia perferendis, deleniti, vero dolorem a odit
+                    maiores commodi quo sint
+                    molestias placeat beatae voluptate. Asperiores fugit dolorum corrupti neque odit, debitis porro
+                    fugiat
+                    natus ab perferendis dignissimos illum dolores quia pariatur repellendus ullam nulla qui alias, esse
+                    corporis iste beatae tempore. Aliquam facilis doloremque nisi corporis velit, earum autem!
+                </p>
+            </article>
+            <article>
+                <h3>Dies ist der
+                    <em>zweite</em> Artikel in der Section</h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, voluptas a, beatae, sunt
+                necessitatibus eveniet numquam
+                mollitia error at distinctio deserunt libero ad. At, incidunt veniam sit nemo quia quasi consectetur
+                delectus
+                minima, laudantium maxime ea suscipit dicta officia pariatur rerum ipsam dolor. Harum cupiditate
+                nesciunt
+                sit fuga eum maxime mollitia perferendis, deleniti, vero dolorem a odit maiores commodi quo sint
+                molestias
+                placeat beatae voluptate. Asperiores fugit dolorum corrupti neque odit, debitis porro fugiat natus ab
+                perferendis
+                dignissimos illum dolores quia pariatur repellendus ullam nulla qui alias, esse corporis iste beatae
+                tempore.
+                Aliquam facilis doloremque nisi corporis velit, earum autem!
+                <footer>
+                    Dies ist ein
+                    <code>footer</code>. Auch
+                    <code>sections</code> oder
+                    <code>articles</code> können einen dazugehörigen
+                    <code>footer</code> haben.
+                </footer>
+            </article>
+            <article>
+                <h3>Dies ist der
+                    <em>dritte</em> Artikel in der Section</h3>
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, voluptas a, beatae, sunt
+                necessitatibus eveniet numquam
+                mollitia error at distinctio deserunt libero ad. At, incidunt veniam sit nemo quia quasi consectetur
+                delectus
+                minima, laudantium maxime ea suscipit dicta officia pariatur rerum ipsam dolor. Harum cupiditate
+                nesciunt
+                sit fuga eum maxime mollitia perferendis, deleniti, vero dolorem a odit maiores commodi quo sint
+                molestias
+                placeat beatae voluptate. Asperiores fugit dolorum corrupti neque odit, debitis porro fugiat natus ab
+                perferendis
+                dignissimos illum dolores quia pariatur repellendus ullam nulla qui alias, esse corporis iste beatae
+                tempore.
+                Aliquam facilis doloremque nisi corporis velit, earum autem!
+            </article>
+        </section>
+
+    </div>
+    <footer>
+        Das ist der
+        <code>footer</code> der Seite. Hier befinden sich normalerweise Informationen zum Autor, Impressum und
+        dergleichen.
+    </footer>
+
+</body>
+
+</html>

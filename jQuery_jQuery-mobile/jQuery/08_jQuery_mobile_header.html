@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="themes/testtheme01.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>jQuery Header</title>
+</head>
+
+<body>
+    <div data-role="page">
+        <!-- **************************** SEITENTITEL ********************************************+ -->
+        <!-- <div data-role="page" data-title="teeeest"> -->
+
+        <div data-role="header">
+            <h1>Meine tolle Seite</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#seite1" class="ui-btn-active" data-iconpos="top" data-icon="home">Seite 1</a>
+                    </li>
+                    <li>
+                        <a href="#seite2" data-iconpos="top" data-icon="star">Seite 2</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+
+        <div role="main" class="ui-content">
+            <p>Text auf meiner tollen Seite</p>
+
+            <ul data-role="listview" data-inset="true" data-filter="true">
+                <li>
+                    <a href="#">Audi</a>
+                </li>
+                <li>
+                    <a href="#popupMenu" data-rel="popup" data-transition="pop">Audi</a>
+                </li>
+                <li>
+                    <a href="#">BMW</a>
+                </li>
+                <li>
+                    <a href="#">Cadillac</a>
+                </li>
+                <li>
+                    <a href="#">Ferrari</a>
+                </li>
+                <li>
+                    <a href="#">Mercedes</a>
+                </li>
+            </ul>
+            <form>
+                <label for="slider-0">Input slider:</label>
+                <input type="range" name="slider" id="slider-0" value="25" min="0" max="100" />
+                <!-- ****************************** DATEPICKER ********************************************** -->
+                <!-- <input type="date" data-role="date"> -->
+            </form>
+            <a href="#" data-role="button" data-icon="star" data-theme="a">Star button</a>
+        </div>
+        <!-- /content -->
+
+        <!-- ******************************** POPUP ********************************************* -->
+        <!-- popup button <a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Popup</a> -->
+        <div data-role="popup" id="popupBasic">
+            <p>Das ist ein simples Popup!</p>
+        </div>
+
+        <!-- advanced popup -->
+        <div id="popupMenu-popup" class="ui-popup-container ui-popup-active" tabindex="0"
+            style="max-width: 459px; top: 30px; left: 48.7937px;">
+            <div data-role="popup" id="popupMenu" data-theme="a"
+                class="ui-popup ui-corner-all ui-overlay-shadow ui-body-a">
+                <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="b"
+                    class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                    <li data-role="divider" data-theme="a"
+                        class="ui-listview-item ui-listview-item-static ui-body-a ui-first-child">Popup API</li>
+                    <li class="ui-listview-item"><a href="options.html" class="ui-listview-item-button ui-button"><span
+                                class="ui-listview-item-icon ui-icon ui-icon-caret-r ui-widget-icon-floatend"></span>Options</a>
+                    </li>
+                    <li class="ui-listview-item"><a href="methods.html" class="ui-listview-item-button ui-button"><span
+                                class="ui-listview-item-icon ui-icon ui-icon-caret-r ui-widget-icon-floatend"></span>Methods</a>
+                    </li>
+                    <li class="ui-listview-item ui-last-child"><a href="events.html"
+                            class="ui-listview-item-button ui-button"><span
+                                class="ui-listview-item-icon ui-icon ui-icon-caret-r ui-widget-icon-floatend"></span>Events</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="footer">
+            <h4>My Footer</h4>
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+</body>
+
+</html>

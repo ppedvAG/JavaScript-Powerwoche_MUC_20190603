@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Selektoren</title>
+
+    <style>
+        /* Element p (Typselektor)
+           Element und Element th, td
+           Element in Element div p
+           Universalselektor *
+           Klassenselektor .class
+           Idselektor #id
+           Pseudo-Klassen-Selektor :hover
+           Pseudo-Element-Selektor ::first-letter
+        */
+
+        p {
+            font-style: italic;
+        }
+
+        div p {
+            color: firebrick;
+        }
+
+        * {
+           /*  margin: 0; */
+        }
+
+        .container {
+            border: 1px solid red;
+        }
+
+        .autor:hover{
+            color: cyan;
+        }
+        .autor::first-letter{
+            font-family: Vivaldi;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Der Zauberlehrling</h1>
+        <p>Walle, walle, manche Strecke</p>
+        <p>daß, zum Zwecke,
+            <span>Wasser</span> fließe</p>
+        <div>
+            <p>und mit reichem, vollem Schwalle</p>
+            <footer>
+                <p>zu dem Bade sich ergieße.</p>
+                <div class="autor">Johann Wolfgang von Goethe</div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

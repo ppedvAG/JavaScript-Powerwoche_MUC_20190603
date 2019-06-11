@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>jQuery Mobile App</title>
+    <meta name="description" content="jQuery-mobile-app">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="themes/themeroller_test.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+
+    <!--
+        Achtung bei Versionsauswahl! jQuery-Mobile funktioniert nur mit den jQuery-Bibliotheken mit der Version 1.8.1 bis 2.1.1 
+        -->
+    <script>
+        var nextId = 1;
+        function addItem() {
+            nextId++;
+            var content = "<div data-role='collapsible' id='set" + nextId + "'><h3>" + $("#todoHeader").val() + "</h3><p>" + $("#todoDesc").val() + "</p></div>";
+            if ($("#todoHeader").val() != "" && $("#todoDesc").val() != "") {
+                $("#todoList").prepend(content).collapsibleset("refresh");
+            } else {
+                alert("Bitte die Felder Kurzbeschreibung und Details ausfüllen ...")
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- Seite 1 - Meine Todos -->
+    <div data-role="page" data-title="Meine Todos" data-theme="a" data-position="fixed" id="mytodo">
+        <!-- Header -->
+        <div data-role="header" data-position="fixed" data-theme="a" data-id="persistentHeader">
+            <h1>Todo Liste</h1>
+        </div>
+        <!-- Header Ende -->
+        <div role="main" class="ui-content">
+            <div data-role="fieldcontain">
+                <label for="todoHeader">Kurzbeschreibung</label>
+                <input type="text" id="todoHeader" name="todoHeader" />
+                <label for="todoDesc">Details</label>
+                <input type="text" id="todoDesc" name="todoDesc" />
+            </div>
+            <button data-role="button" id="addTodo" onclick="addItem();">Todo hinzufügen</button>
+            <br>
+
+            <div data-role="collapsible-set" id="todoList">
+
+            </div>
+
+        </div>
+
+        <div data-role="footer" data-id="persistentFooter" data-position="fixed">
+            <h4>Fußzeile</h4>
+        </div>
+    </div>
+    <!-- Seite 1 Ende  -->
+</body>
+
+</html>

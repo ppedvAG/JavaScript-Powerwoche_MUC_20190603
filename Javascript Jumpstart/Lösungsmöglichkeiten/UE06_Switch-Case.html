@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pizzabestellung</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            background-color: floralwhite;
+            background-image: url(images/pizza.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        #wrapper {
+            background: linear-gradient(to right, rgba(0, 100, 0, 0.8), rgba(245, 245, 245, 0.8) 40%, rgba(245, 245, 245, 0.8) 60%, rgba(178, 34, 34, 0.8));
+            box-shadow: 0 0 8px black;
+            color: rgb(41, 41, 41);
+            width: 80%;
+            margin: 0 auto;
+            min-height: 100vh;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            max-height: 120vh;
+        }
+
+        fieldset {
+            margin-bottom: 1em;
+            color: floralwhite;
+            width: 46%;
+        }
+
+        legend {
+            font-weight: bold;
+            color: rgb(41, 41, 41);
+        }
+
+        #deliverTo label {
+            display: block;
+            margin-top: 0.1em;
+            font-size: 0.8em;
+        }
+
+        .bg-transparent {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 0.3rem;
+        }
+
+        #garlic {
+            height: 3.5em;
+        }
+
+        #milkshakes {
+            height: 14rem;
+        }
+
+        #bg-milkshake {
+            height: 12.3rem;
+            background-image: url(images/milkshake01.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position-y: center;
+            border-radius: 0.3rem;
+        }
+
+        #milkshake {
+            box-sizing: border-box;
+            padding: 0.3rem 1rem;
+            border-radius: 0.3rem;
+            height: 12.3rem;
+            background-color: rgba(255, 250, 240, 0.6);
+            color: rgb(41, 41, 41);
+            font-family: Vivaldi, sans-serif;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        #demo {
+            margin-top: 2rem;
+            min-height: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <form>
+
+            <fieldset>
+                <legend>Pizze</legend>
+                <div class="bg-transparent">
+
+                    <p>
+                        <label for="">
+                            <input name="pizze" type="radio" checked> Margherita</label>
+                    </p>
+                    <p>
+                        <label for="">
+                            <input name="pizze" type="radio"> Funghi</label>
+                    </p>
+                    <p>
+                        <label for="">
+                            <input name="pizze" type="radio"> Tonno</label>
+                    </p>
+                    <p>
+                        <label for="">
+                            <input name="pizze" type="radio"> Salami</label>
+                    </p>
+                    <p>
+                        <label for="">
+                            <input name="pizze" type="radio"> Della Casa</label>
+                    </p>
+                </div>
+            </fieldset>
+            <fieldset id="extras">
+                <legend>Extras</legend>
+                <div class="bg-transparent">
+                    <p>
+                        <label for="">
+                            <input type="checkbox" name="extras"> Mais</label>
+                    </p>
+                    <p>
+                        <label for="">
+                            <input type="checkbox" name="extras"> Paprika</label>
+                    </p>
+                    <p>
+                        <label for="">
+                            <input type="checkbox" name="extras"> Zwiebeln</label>
+                    </p>
+                    <p>
+                        <label for="">
+                            <input type="checkbox" name="extras"> Ei</label>
+                    </p>
+                    <p>
+                        <label for="">
+                            <input type="checkbox" name="extras"> Tomaten</label>
+                    </p>
+                </div>
+            </fieldset>
+
+
+
+            <fieldset id="garlic">
+                <legend>Knoblauch</legend>
+
+                <select id="select_garlic">
+                    <option>nein, danke</option>
+                    <option>ja, bitte</option>
+                    <option>ja, bitte extra viel</option>
+                </select>
+            </fieldset>
+
+
+            <fieldset id="deliverTo">
+                <legend>Lieferadresse</legend>
+                <div class="bg-transparent">
+                    <p>
+                        <label>Vorname: </label>
+                        <input type="text" placeholder="Max">
+
+                        <label>Nachname: </label>
+                        <input type="text" placeholder="Mustermann">
+
+                        <label>Straße/Hausnr.: </label>
+                        <input type="text" placeholder="Musterstr. 2">
+
+                        <label>PLZ: </label>
+                        <input type="text" placeholder="1010">
+
+                        <label>Ort: </label>
+                        <input type="text" placeholder="Wien">
+
+                        <label>Tel.Nr.: </label>
+                        <input type="text" placeholder="0699/123456789">
+
+                        <label>E-Mail: </label>
+                        <input type="text" placeholder="max@muster.at">
+                    </p>
+                </div>
+            </fieldset>
+            <fieldset id="milkshakes">
+                <legend>Milchshakes</legend>
+                <div id="bg-milkshake">
+                    <div id="milkshake">
+                        <select id="select_milkshake" onchange="chosen();">
+                            <option>Bitte auswählen</option>
+                            <option>Ananas</option>
+                            <option>Beeren</option>
+                            <option>Kiwi</option>
+                        </select>
+                        <div id="demo"></div>
+                    </div>
+                </div>
+            </fieldset>
+            <br>
+            <p>
+                <input type="submit" value="Bestellen">
+            </p>
+        </form>
+    </div>
+
+    <script>
+        function chosen() {
+            var choice = document.getElementById('select_milkshake').value;
+            var bg = document.getElementById('bg-milkshake');
+            var transparency = document.getElementById('milkshake');
+            var div = document.getElementById('demo');
+            var text;
+
+            switch (choice) {
+                case "Ananas":
+                    text = "Du hast Dich für unser beliebtes Ananasshake entschieden!";
+                    bg.style.backgroundImage = "url(images/pineappleshake.jpg)";
+                    bg.style.backgroundSize = "100% 180%";
+                    transparency.style.backgroundColor = "rgba(218, 165, 32, 0.2)";
+                    break;
+                case "Beeren":
+                    text = "Du hast Dich für unser fruchtiges Beerenshake entschieden!";
+                    bg.style.backgroundImage = "url(images/berryshake.jpg)";
+                    bg.style.backgroundSize = "100% 180%";
+                    transparency.style.backgroundColor = "rgba(128, 0, 128, 0.2)";
+                    break;
+                case "Kiwi":
+                    text = "Du hast Dich für unser exotisches Kiwishake entschieden!";
+                    bg.style.backgroundImage = "url(images/kiwishake.jpg)";
+                    bg.style.backgroundSize = "100% 180%";
+                    transparency.style.backgroundColor = "rgba(107, 142, 0, 0.2)";
+                    break;
+                default:
+                // zusätzliche Übung: 
+                // bg.style.backgroundImage wieder auf "url(images/milkshake01.jpg)"; setzen
+                // backgroundsize + color setzen ...
+                    text = "Bitte ein Shake auswählen!";
+            }
+            div.innerHTML = text;
+
+        }
+    </script>
+
+</body>
+
+</html>

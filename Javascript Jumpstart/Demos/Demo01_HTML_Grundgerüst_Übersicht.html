@@ -1,0 +1,96 @@
+<!doctype html>
+<!-- BEISPIEL für ein HTML-Grundgerüst -->
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <!-- utf-8 ist der Standard, der (fast) alle uns bekannten Schriftzeichen kennt. Damit
+                             es auch wirklich so funktioniert, wie wir das möchten, muss bei html die Sprache angegeben
+                             werden. Wollen wir z.B. Ä,Ö,Ü verwenden, sollte die Sprache "de" angegeben sein. -->
+
+  <link rel="stylesheet" type="text/css" href="myStyles.css">
+  <!-- wenn die css-styles aus einem externen Stylesheet kommen,
+                                                                  gibt man so den Pfad an. Es können auch mehrere Stylesheets
+                                                                  angegeben werden. -->
+
+  <title>Meine Seite</title>
+  <!-- dieser Titel wird im Reiter/Tab/Registerkarte angezeigt. -->
+  <!-- Styles können auch intern definiert werden: -->
+  <style>
+    .otherColor {
+      color: red;
+    }
+
+    code {
+      color: ivory;
+      background-color: #929097;
+      padding: 0.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <!-- umschließt die gesamte Seite; wird auch gerne als #wrapper bezeichnet -->
+    <header>
+      <!-- hier kommt die Seitenüberschrift rein, Untertitel usw. -->
+      <h1>Das ist die Seitenüberschrift</h1>
+      <p>Das "Ü" in "Überschrift" funktioniert, weil wir oben den Standard UTF-8 angegeben haben.</p>
+    </header>
+    <nav>
+      <!-- hier kommt die Navigationsleiste rein -->
+    </nav>
+    <div id="content">
+      <!--dieses div umschließt meinen eigentlichen Seiteninhalt -->
+      <section>
+        <!-- in einer Section steht zusammengehöriges Content, z.B. auf einer Sportseite: Fußball -->
+        <article>
+          <!-- auch in einem Article steht zusammengehöriges Content, das auch für sich alleine stehen kann;
+                      auf der Sportseite in der Rubrik Fußball z.B. der Bericht über ein bestimmtes Fußballspiel -->
+          <p>Das funktioniert jetzt sehr gut; früher musste man das "Ü" und andere Umlaute noch in HTML mittels
+            <code>&amp;Uuml;</code> angeben.</p>
+          <br/>
+          <!-- linebreak einfügen -->
+          <hr/>
+          <!-- hr steht für "horizontal ruler" und ist ein Trennstrich über die ganze Seite (bzw. das Element, in dem er sich befindet) -->
+          <br/>
+
+          <p>Tags können auch miteinander
+            <span class="otherColor">verschachtelt</span> werden. Auch für das
+            <em>Styling</em> hat das
+            <strong>Vorteile.</strong>
+          </p>
+        </article>
+        <article>
+          <!-- sections und articles können ineinander geschachtelt werden; es können mehrere article innerhalb einer section
+                      stehen; auch umgekehrt wäre möglich. Theoretisch kann sich auch eine section innerhalb einer section 
+                      befinden (Sinnhaftigkeit der Schachtelungen wäre zu überlegen! Seite planen!) -->
+
+        </article>
+
+      </section>
+
+      <!-- kann, muss man aber nicht machen : <aside>
+           in ein aside gehören Inhalte, die noch peripher mit dem eigentlichen Inhalt zu tun haben. In der Praxis 
+                findet man darin oft die Werbung
+       </aside> -->
+
+      <footer>
+        <!-- eine Seite kann theoretisch auch mehrere footer enthalten; z.B. jede section KÖNNTE einen enthalten (wieder auf
+                    Sinnhaftigkeit achten und bei der Planung bedenken!). In einem footer sollte sich Information zum Autor befinden
+                    (Impressum usw.) -->
+
+      </footer>
+
+    </div>
+
+  </div>
+
+  <!-- Auch das Script könnte in einer externen Datei stehen. Wenn innerhalb des HTML-Files, wird es idealerweise
+     ganz am Ende, vor dem body-end-tag eingefügt. -->
+  <script>
+  </script>
+
+</body>
+
+</html>

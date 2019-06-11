@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Attributselektoren</title>
+    <style>
+        #wrapper {
+            margin: 5em auto;
+            padding: 2em;
+            width: 20em;
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 1em;
+            border: medium solid navy;
+            border-radius: 1em;
+        }
+
+        /* Die Klasse muss GENAU der Zeichenfolge "Zauberlehrling" entsprechen. Achtung: Groß- und Kleinschreibung! */
+
+        p[class="Zauberlehrling"] {
+            font-size: 1.5em;
+        }
+        
+
+        /* Alle p, deren Klasse NICHT die Zeichenfolge "Zauberlehrling" enthalten: */
+
+        p:not([class="Zauberlehrling"]) {
+            font-style: italic;
+        }
+        
+
+        /* Alle p, deren Klasse mit "Der" BEGINNT: */
+
+        p[class^="Der"] {
+            color: limegreen;
+        }
+        
+
+        /* Alle p, deren Klasse mit "tor" ENDET: */
+
+        div[class$="tor"] {
+            background-color: lightgray;
+        }
+        
+        
+
+        /* Alle divs, deren Klasse irgendwo "Auto" enthält (muss kein ganzes Wort sein!) */
+
+        div[class*="Auto"] {
+            font-weight: bold;
+        }
+        
+
+        /* Das funktioniert nicht nur für Klassen, sondern auch für andere Attribute:*/
+
+        a[target="_blank"] {
+            text-decoration: none;
+            color: inherit;
+        } 
+        
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <p class="Zauberlehrling">Der Zauberlehrling</p>
+        <p class="Der Zauberlehrling">Walle, walle, manche Strecke</p>
+        <p class="Der Zauberlehrling">daß, zum Zwecke,
+            <span>Wasser</span> fließe</p>
+
+        <div>
+            <p class="Der Zauberlehrling">und mit reichem, vollem Schwalle</p>
+            <footer>
+                <p class="Der Zauberlehrling">zu dem Bade sich ergieße.</p>
+                <div class="Autor">
+                    <a href="#" target="_blank">Johann Wolfgang von Goethe</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>
